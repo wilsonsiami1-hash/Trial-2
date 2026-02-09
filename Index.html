@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucy 💖</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: 
+      linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+      url("https://images.unsplash.com/photo-1518791841217-8f162f1e1131");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow-x: hidden;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(6px);
+    padding: 25px;
+    border-radius: 25px;
+    max-width: 92%;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: 14px 28px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  .yes {
+    background: #ff4d6d;
+    color: white;
+  }
+
+  .no {
+    background: #555;
+    color: white;
+    position: absolute;
+  }
+
+  .photos {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .photos img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid white;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🐱 Lucy 💖</h1>
+  <p>
+    Please look at this cute cat…<br>
+    it’s begging almost as much as I am 🥺💕<br><br>
+    Will you be my Valentine?
+  </p>
+
+  <!-- PHOTO SECTION -->
+  <div class="photos">
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
+  </div>
+
+  <br>
+
+  <div class="buttons">
+    <button class="yes" onclick="yesClicked()">Yes 💕</button>
+    <button class="no" id="noBtn" onmouseover="moveNo()">No 🙃</button>
+  </div>
+</div>
+
+<audio id="song">
+  <source src="https://dl.dropboxusercontent.com/scl/fi/4h8v2jzj9w5e2t7v5n/Ordinary.mp3?rlkey=example" type="audio/mpeg">
+</audio>
+
+<script>
+  const noBtn = document.getElementById("noBtn");
+
+  function moveNo() {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  }
+
+  function yesClicked() {
+    document.getElementById("song").play();
+
+    document.body.innerHTML = `
+      <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        font-family:Arial;
+        background:linear-gradient(135deg,#ff758c,#ff9a9e);
+        color:white;
+        padding:20px;
+      ">
+        <div>
+          <h1>🥰 SHE SAID YES!</h1>
+          <p>
+            Lucy, you’re my favorite person 💖<br><br>
+            Thank you for making my heart feel at home 🏡❤️
+          </p>
+        </div>
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>
